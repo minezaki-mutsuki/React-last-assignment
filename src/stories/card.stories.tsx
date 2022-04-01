@@ -1,21 +1,23 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import NewsAndEventsMore from '../components/molecules/NewsAndEventsMore';
+import Card from '../components/molecules/card';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Molecules/NewsAndEventsMore',
-  component: NewsAndEventsMore,
+  title: 'Example/Molecules/Card',
+  component: Card,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    info: { control: 'text' }
+    title: { control: 'text' },
+    contents: { control: 'text' }
   }
-} as ComponentMeta<typeof NewsAndEventsMore>;
+} as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof NewsAndEventsMore> = (args) => <NewsAndEventsMore {...args}/>;
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args}/>;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  info: 'info'
+  title: 'title',
+  contents: 'contents'
 }
