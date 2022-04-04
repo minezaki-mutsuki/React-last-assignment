@@ -52,7 +52,7 @@ const Title = styled.h3`
 `
 const UnitWrapper = styled.div`
     background-color: ${color.gray_desertStorm};
-    padding: 23px 0;
+    padding: 22px 0;
 `
 const PriceWrapper = styled.div`
     display: flex;
@@ -85,7 +85,7 @@ const List1 = styled.p`
     font-family: ${family.gothic};
     text-align: center;
     margin: 0;
-    padding: 20px 19px;
+    padding: 19px 19px;
     border: 1px solid ${color.gray_desertStorm};
     border-bottom: none;
 `
@@ -94,6 +94,6 @@ const List2 = styled.p`
     font-family: ${family.gothic};
     text-align: center;
     margin: 0;
-    padding: 20px 19px;
+    padding: 19px 19px;
     border: 1px solid ${color.gray_desertStorm};
 `
