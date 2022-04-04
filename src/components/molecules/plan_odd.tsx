@@ -5,8 +5,7 @@ import { breakpoint } from "../../config/breakpoint";
 
 interface PlanOddProps {
     title: string;
-    mark: string;
-    price: string;
+    price: number;
     unit: string;
     list1: string;
     list2: string;
@@ -15,19 +14,26 @@ interface PlanOddProps {
 }
 
 const PlanOdd = (Props: PlanOddProps) => {
+    // the Japanese yen doesn't use a minor unit
+
+// expected output: "￥123,457"
+    const price = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }
+    ).format(Props.price);
+    const jp = [ Props.list1 , Props.list2 , Props.list3 ]
     return(
         <Wrapper>
         <Title>{Props.title}</Title>
         <UnitWrapper>
         <PriceWrapper>
-            <Mark>{Props.mark}</Mark>
-            <Price>{Props.price}</Price>
+            <Price>{price}</Price>
         </PriceWrapper>
         <Unit>{Props.unit}</Unit>
         </UnitWrapper>
-        <List1>{Props.list1}</List1>
-        <List1>{Props.list2}</List1>
-        <List1>{Props.list3}</List1>
+        {jp.map((value,index)=>{
+            return(
+                <List1>{jp},{index},{value}</List1>
+            )
+        })}
         <List2>{Props.list4}</List2>
         </Wrapper>
     )
@@ -58,19 +64,15 @@ const PriceWrapper = styled.div`
     text-align: center;
     justify-content: center;
 `
-const Mark = styled.p`
-    font-size: ${size.l};
-    font-family: ${family.gothic};
-    color: ${color.orange_bistre};
-    margin: 0;
-    padding-top: 30px;
-`
 const Price = styled.p`
     font-size: ${size.xxl};
     font-family: ${family.gothic};
     color: ${color.orange_bistre};
     margin: 0;
     font-weight: 600;
+    &::first-letter{
+        font-size: ${size.l};
+    }
 `
 const Unit = styled.p`
     font-size: ${size.s};

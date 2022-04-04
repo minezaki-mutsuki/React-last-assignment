@@ -4,6 +4,7 @@ import { size , family } from '../../config/font';
 import { breakpoint } from "../../config/breakpoint";
 import Button from "../atoms/button";
 import Concept from '../image/concept.png'
+import { Primary } from "../../stories/Button.stories";
 
 interface CardProps {
     title: string;
@@ -11,6 +12,7 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => {
+    const args = {text: 'text'}
     return(
         <Wrapper>
         <Title>{props.title}</Title>
@@ -19,7 +21,7 @@ const Card = (props: CardProps) => {
         </ImgLink>
         <CardBody>
             <Contents>{props.contents}</Contents>
-            <Button></Button>
+            <Button {...args}/>
         </CardBody>
         </Wrapper>
     )
