@@ -5,8 +5,7 @@ import { breakpoint } from "../../config/breakpoint";
 
 interface PlanEvenProps {
     title: string;
-    mark: string;
-    price: string;
+    price: number;
     unit: string;
     list1: string;
     list2: string;
@@ -15,20 +14,25 @@ interface PlanEvenProps {
 }
 
 const PlanEven = (Props: PlanEvenProps) => {
+
+    const price = new Intl.NumberFormat('ja-JP',{style: 'currency',currency:'JPY'}
+    ).format(Props.price);
+
+    const list = [ Props.list1 , Props.list2 , Props.list3 , Props.list4 ]
+
     return(
         <Wrapper>
         <Title>{Props.title}</Title>
-        <UnitWrapper>
         <PriceWrapper>
-            <Mark>{Props.mark}</Mark>
-            <Price>{Props.price}</Price>
+            <Price>{price}</Price>
+            <Unit>{Props.unit}</Unit>
         </PriceWrapper>
-        <Unit>{Props.unit}</Unit>
-        </UnitWrapper>
-        <List1>{Props.list1}</List1>
-        <List1>{Props.list2}</List1>
-        <List1>{Props.list3}</List1>
-        <List2>{Props.list4}</List2>
+        {list.map((value , index)=>{
+            return(
+                <List1 key={index}>{value}</List1>
+            )
+        })}
+        <List2>{list.pop()}</List2>
         </Wrapper>
     )
 }
@@ -50,21 +54,10 @@ const Title = styled.h3`
     margin: 0;
     padding: 20px 0;
 `
-const UnitWrapper = styled.div`
-    background-color: ${color.gray_desertStorm};
-    padding: 22px 0;
-`
 const PriceWrapper = styled.div`
-    display: flex;
     text-align: center;
-    justify-content: center;
-`
-const Mark = styled.p`
-    font-size: ${size.l};
-    font-family: ${family.gothic};
-    color: ${color.orange_bistre};
-    margin: 0;
-    padding-top: 30px;
+    background-color: ${color.gray_desertStorm};
+    padding: 23px 0;
 `
 const Price = styled.p`
     font-size: ${size.xxl};
@@ -72,11 +65,13 @@ const Price = styled.p`
     color: ${color.orange_bistre};
     margin: 0;
     font-weight: 600;
+    &::first-letter{
+        font-size: ${size.l};
+    }
 `
 const Unit = styled.p`
     font-size: ${size.s};
     font-family: ${family.gothic};
-    text-align: center;
     margin: 0;
     margin-top: 16px;
 `

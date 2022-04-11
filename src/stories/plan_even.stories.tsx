@@ -10,8 +10,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     title: { control: 'text' },
-    mark: { control: 'text' },
-    price: { control: 'text' },
+    price: { control: 'number' },
     unit: { control: 'text' },
     list1: { control: 'text' },
     list2: { control: 'text' },
@@ -25,8 +24,7 @@ const Template: ComponentStory<typeof PlanEven> = (args) => <PlanEven {...args}/
 export const Primary = Template.bind({});
 Primary.args = {
   title: 'title',
-  mark: 'mark',
-  price: 'price',
+  price: 50000,
   unit: 'unit',
   list1: 'list1',
   list2: 'list2',

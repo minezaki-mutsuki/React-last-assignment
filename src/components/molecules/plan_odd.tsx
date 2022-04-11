@@ -19,22 +19,20 @@ const PlanOdd = (Props: PlanOddProps) => {
 // expected output: "￥123,457"
     const price = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }
     ).format(Props.price);
-    const jp = [ Props.list1 , Props.list2 , Props.list3 ]
+    const jp = [ Props.list1 , Props.list2 , Props.list3 , Props.list4 ]
     return(
         <Wrapper>
         <Title>{Props.title}</Title>
-        <UnitWrapper>
         <PriceWrapper>
             <Price>{price}</Price>
+            <Unit>{Props.unit}</Unit>
         </PriceWrapper>
-        <Unit>{Props.unit}</Unit>
-        </UnitWrapper>
         {jp.map((value,index)=>{
             return(
-                <List1>{jp},{index},{value}</List1>
+                <List1 key={index}>{value}</List1>
             )
         })}
-        <List2>{Props.list4}</List2>
+        <List2>{jp.pop()}</List2>
         </Wrapper>
     )
 }
@@ -55,14 +53,10 @@ const Title = styled.h3`
     margin: 0;
     padding: 20px 0;
 `
-const UnitWrapper = styled.div`
+const PriceWrapper = styled.div`
     background-color: ${color.gray_desertStorm};
     padding: 23px 0;
-`
-const PriceWrapper = styled.div`
-    display: flex;
     text-align: center;
-    justify-content: center;
 `
 const Price = styled.p`
     font-size: ${size.xxl};
@@ -77,7 +71,6 @@ const Price = styled.p`
 const Unit = styled.p`
     font-size: ${size.s};
     font-family: ${family.gothic};
-    text-align: center;
     margin: 0;
     margin-top: 16px;
 `
