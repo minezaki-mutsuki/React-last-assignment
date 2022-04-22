@@ -11,28 +11,29 @@ import Book from '../image/article-book.png'
 type EventsProps = {
     day: string;
     article: string;
+    img: string;
 };
 
-const Events = (props: EventsProps) => {
+const Events = () => {
     const argsTitle = {title : 'Events' , contents : 'イベント'}
     const argsInfo = {info : 'お知らせ一覧'}
     const news: EventsProps[] = [
-        { day: '2022.4.18', article: "ブックカフェ・コワーキング系サイト向けテーマ"},
-        { day: '2022.4.19', article: "3種のレイアウトから選択できるテンプレート"},
-        { day: '2022.4.20', article: "利用者からのご質問をまとめた「FAQ」ページ"}
+        { day: '2022.4.18', article: "ブックカフェ・コワーキング系サイト向けテーマ", img : Office}, 
+        { day: '2022.4.19', article: "3種のレイアウトから選択できるテンプレート", img : Work},
+        { day: '2022.4.20', article: "利用者からのご質問をまとめた「FAQ」ページ", img : Book}
     ];
     return(
         <>
         <NewsAndEventsTitle {...argsTitle}/>
-        {news.map((news :EventsProps) => {
+        {news.map((info :EventsProps) => {
             return(
                 <ArticleWrapper>
                     <div className="ImgWrapper">
-                    <ArticleImg className="img" src={Office}></ArticleImg>
+                    <ArticleImg className="img" src={info.img}></ArticleImg>
                     </div>
                     <div className="DayWrapper">
-                    <Article href="#">{props.article}</Article>
-                    <Day>{props.day}</Day>
+                    <Article href="#">{info.article}</Article>
+                    <Day>{info.day}</Day>
                     </div>
                 </ArticleWrapper>
             );

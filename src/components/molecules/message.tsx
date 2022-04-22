@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import { size , family } from '../../config/font';
 import { breakpoint } from '../../config/breakpoint';
+import { color } from '../../config/color';
 
 interface MessageProps{
     title: string;
     contents: string;
+    color?: string;
+    backgroundColor?: string;
 }
 
 const Message = (props: MessageProps) => {
     return(
-        <Wrapper>
+        <Wrapper textColor= {props.color} backgroundColor={props.backgroundColor}>
             <Title>{props.title}</Title>
             <Contents>{props.contents}</Contents>
         </Wrapper>
@@ -18,7 +21,13 @@ const Message = (props: MessageProps) => {
 
 export default Message
 
-const Wrapper = styled.div`
+interface WrapperProps{
+    textColor?: string
+    backgroundColor?:string
+}
+const Wrapper = styled.div<WrapperProps>`
+    color: ${(props) => props.textColor || "black"};
+    background-color: ${(props) => props.backgroundColor || color.white};
     padding: 32px 20px;
     text-align: center;
     @media (min-width: ${breakpoint.lg}){

@@ -12,7 +12,7 @@ export default {
   }
 } as ComponentMeta<typeof Top>;
 
-const Template: ComponentStory<typeof Top> = (args) => <Top {...args}/>;
+const Template: ComponentStory<typeof Top> = (args) => <Top/>;
 
 export const Primary = Template.bind({});
 Primary.args = {
