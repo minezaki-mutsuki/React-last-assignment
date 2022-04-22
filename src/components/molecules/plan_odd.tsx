@@ -32,7 +32,6 @@ const PlanOdd = (Props: PlanOddProps) => {
                 <List1 key={index}>{value}</List1>
             )
         })}
-        <List2>{jp.pop()}</List2>
         </Wrapper>
     )
 }
@@ -82,12 +81,7 @@ const List1 = styled.p`
     padding: 20px 19px;
     border: 1px solid ${color.gray_desertStorm};
     border-bottom: none;
-`
-const List2 = styled.p`
-    font-size: ${size.s};
-    font-family: ${family.gothic};
-    text-align: center;
-    margin: 0;
-    padding: 20px 19px;
-    border: 1px solid ${color.gray_desertStorm};
+    &:last-child{
+        border-bottom: 1px solid ${color.gray_desertStorm};
+    }
 `

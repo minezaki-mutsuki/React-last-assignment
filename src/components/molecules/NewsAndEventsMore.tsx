@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { color } from "../../config/color";
 import { size , family } from '../../config/font';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBarcode } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 interface NewsAndEventsMoreProps {
     info: string;
@@ -10,26 +10,33 @@ interface NewsAndEventsMoreProps {
 
 const NewsAndEventsMore = (props: NewsAndEventsMoreProps) => {
     return(
-        <Wrapper>
-        <Information href="#" >{props.info}</Information>
-        <FontAwesomeIcon icon={faBarcode} />
+        <Wrapper href="#">
+        <Information>{props.info}</Information>
+        <FontAwesomeIcon className="newsInfoIcon" icon={faAngleRight} />
         </Wrapper>
     );
 }
 
 export default NewsAndEventsMore
 
-const Wrapper = styled.div`
-    text-align: right;
-`
-const Information = styled.a`
-    color: ${color.black};
-    font-size: ${size.s};
-    font-family: ${family.gothic};
+const Wrapper = styled.a`
     text-decoration: none;
-    width: auto;
+    display: flex;
+    color: ${color.black};
     transition: ease 0.2s;
+    margin-left: auto;
+    width: fit-content;
     &:hover{
         color: ${color.gray_nobel};
     }
+    .newsInfoIcon{
+        margin-left: 16px;
+        margin-top: 2px;
+    }
+`
+const Information = styled.p`
+    font-size: ${size.s};
+    font-family: ${family.gothic};
+    margin: 0;
+    text-decoration: none;
 `
