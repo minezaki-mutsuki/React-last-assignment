@@ -10,22 +10,24 @@ type NewsProps = {
     article: string;
 };
 
-const News = (props: NewsProps) => {
+const News = () => {
     const argsTitle = {title : 'News' , contents : 'お知らせ'}
     const argsInfo = {info : 'お知らせ一覧'}
     const news: NewsProps[] = [
-        { day: '2022.4.18', article: "ブックカフェ・コワーキング系サイト向けテーマ"},
-        { day: '2022.4.19', article: "3種のレイアウトから選択できるテンプレート"},
-        { day: '2022.4.20', article: "利用者からのご質問をまとめた「FAQ」ページ"}
+        { day: '2018.6.20', article: "ブックカフェ・コワーキング系サイト向けテーマ「Switch」をリリースしました。"},
+        { day: '2018.6.18', article: "3種のレイアウトから選択できるテンプレートを固定ページに実装。"},
+        { day: '2018.6.12', article: "利用者からのご質問をまとめた「FAQ」ページをアップしました。"},
+        { day: '2018.6.08', article: "デモ用のサンプルデータを表示する「インポート機能」でサイト構築を快適に？"},
+        { day: '2018.6.02', article: "テーマのアップデート情報について。"}
     ];
     return(
         <>
         <NewsAndEventsTitle {...argsTitle}/>
-        {news.map((news :NewsProps) => {
+        {news.map((info :NewsProps) => {
             return(
                 <ArticleWrapper>
-                    <Day>{props.day}</Day>
-                    <Article href="#">{props.article}</Article>
+                    <Day>{info.day}</Day>
+                    <Article href="#">{info.article}</Article>
                 </ArticleWrapper>
             );
         })}

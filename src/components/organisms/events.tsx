@@ -18,9 +18,9 @@ const Events = () => {
     const argsTitle = {title : 'Events' , contents : 'イベント'}
     const argsInfo = {info : 'お知らせ一覧'}
     const news: EventsProps[] = [
-        { day: '2022.4.18', article: "ブックカフェ・コワーキング系サイト向けテーマ", img : Office}, 
-        { day: '2022.4.19', article: "3種のレイアウトから選択できるテンプレート", img : Work},
-        { day: '2022.4.20', article: "利用者からのご質問をまとめた「FAQ」ページ", img : Book}
+        { day: '2022.4.18', article: "全ての業種に対応した起業応援セミナーを開催します。", img : Office}, 
+        { day: '2022.4.19', article: "第3回Switchクリエイター交流会開催いたします!", img : Work},
+        { day: '2022.4.20', article: "Webビジネス初心者の方必見!Webサイト制作講座を3回にわたって開催します!", img : Book}
     ];
     return(
         <>

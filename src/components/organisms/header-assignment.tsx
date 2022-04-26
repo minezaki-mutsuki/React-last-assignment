@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
     return(
         <HeaderWrapper>
-            header
+            div
         </HeaderWrapper>
     )
 }
