@@ -8,12 +8,13 @@ interface MessageProps{
     contents: string;
     color?: string;
     backgroundColor?: string;
+    titleColor?: string
 }
 
 const Message = (props: MessageProps) => {
     return(
         <Wrapper textColor= {props.color} backgroundColor={props.backgroundColor}>
-            <Title>{props.title}</Title>
+            <Title titleColor = {props.titleColor}>{props.title}</Title>
             <Contents>{props.contents}</Contents>
         </Wrapper>
     );
@@ -24,6 +25,7 @@ export default Message
 interface WrapperProps{
     textColor?: string
     backgroundColor?:string
+    titleColor?: string
 }
 const Wrapper = styled.div<WrapperProps>`
     color: ${(props) => props.textColor || "black"};
@@ -34,7 +36,8 @@ const Wrapper = styled.div<WrapperProps>`
         padding: 52px 20px;
     }
 `
-const Title = styled.h2`
+const Title = styled.h2<WrapperProps>`
+    color: ${(props) => props.titleColor || color.black};
     font-size: ${size.l};
     font-family: ${family.mincho};
     margin-bottom: 8px;

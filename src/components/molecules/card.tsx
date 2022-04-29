@@ -7,23 +7,24 @@ import Concept from '../image/concept.png'
 import { Primary } from "../../stories/Button.stories";
 
 interface CardProps {
+    text: string;
     title: string;
     contents: string;
+    img: string;
 }
 
 const Card = (props: CardProps) => {
-    const args = {text: 'text'}
     return(
-        <Wrapper>
-        <Title>{props.title}</Title>
-        <ImgLink href="#">
-            <Img className="card-img" src={Concept} alt="card-img" />
-        </ImgLink>
-        <CardBody>
-            <Contents>{props.contents}</Contents>
-            <Button {...args}/>
-        </CardBody>
-        </Wrapper>
+                <Wrapper>
+                <Title>{props.title}</Title>
+                <ImgLink href="#">
+                    <Img className="card-img" src={props.img} alt="card-img" />
+                </ImgLink>
+                <CardBody>
+                    <Contents>{props.contents}</Contents>
+                    <Button text={props.text}/>
+                </CardBody>
+                </Wrapper>
     )
 }
 
@@ -31,15 +32,22 @@ export default Card
 
 const Wrapper = styled.div`
     width: 100%;
+    margin-bottom: 40px;
+    @media (min-width: ${breakpoint.md}){
+    margin-bottom: 100px;
+    }
 `
 const Title = styled.h3`
     font-size: ${size.l};
     color: ${color.orange_bistre};
     font-family: ${family.gothic};
-    position: absolute;
     z-index: 5;
     margin: 0;
-    left: 20px;
+    margin-left: 4px;
+    position: absolute;
+    @media (min-width: ${breakpoint.md}){
+    top: 18px;
+    }
 `
 const ImgLink = styled.a`
     display: block;

@@ -4,7 +4,7 @@ import { size , family } from '../../config/font'
 import { breakpoint } from '../../config/breakpoint'
 
 interface ButtonProps {
-  text: string;  
+  text: string;
 }
 
 const Button = (props: ButtonProps) => {

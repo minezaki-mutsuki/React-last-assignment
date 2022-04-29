@@ -23,7 +23,7 @@ const Events = () => {
         { day: '2022.4.20', article: "Webビジネス初心者の方必見!Webサイト制作講座を3回にわたって開催します!", img : Book}
     ];
     return(
-        <>
+        <div>
         <NewsAndEventsTitle {...argsTitle}/>
         {news.map((info :EventsProps) => {
             return(
@@ -39,7 +39,7 @@ const Events = () => {
             );
         })}
         <NewsAndEventsMore {...argsInfo}/>
-        </>
+        </div>
     )
 }
 

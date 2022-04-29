@@ -39,9 +39,10 @@ const PlanEven = (Props: PlanEvenProps) => {
 export default PlanEven
 
 const Wrapper = styled.div`
+    margin-bottom: 30px;
     border: 5px solid ${color.orange_bistre};
    @media (min-width: ${breakpoint.md}){
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     } 
 `
 const Title = styled.h3`

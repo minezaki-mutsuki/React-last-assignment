@@ -39,8 +39,9 @@ const PlanOdd = (Props: PlanOddProps) => {
 export default PlanOdd
 
 const Wrapper = styled.div`
+    margin-bottom: 30px;
    @media (min-width: ${breakpoint.md}){
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     } 
 `
 const Title = styled.h3`

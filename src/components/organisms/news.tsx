@@ -21,7 +21,7 @@ const News = () => {
         { day: '2018.6.02', article: "テーマのアップデート情報について。"}
     ];
     return(
-        <>
+        <div>
         <NewsAndEventsTitle {...argsTitle}/>
         {news.map((info :NewsProps) => {
             return(
@@ -32,7 +32,7 @@ const News = () => {
             );
         })}
         <NewsAndEventsMore {...argsInfo}/>
-        </>
+        </div>
     )
 }
 
@@ -41,12 +41,13 @@ export default News
 const ArticleWrapper = styled.div`
     border: solid 1px ${color.gray_gainsboro};
     border-bottom: none;
-    padding: 20px;
+    padding: 16px 20px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     &:last-child{
         border-bottom: solid 1px ${color.gray_gainsboro};
+        margin-bottom: 30px;
     }
 `
 const Day = styled.p`
