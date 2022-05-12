@@ -21,7 +21,7 @@ const News = () => {
         { day: '2018.6.02', article: "テーマのアップデート情報について。"}
     ];
     return(
-        <div>
+        <Wrapper>
         <NewsAndEventsTitle {...argsTitle}/>
         {news.map((info :NewsProps) => {
             return(
@@ -32,11 +32,15 @@ const News = () => {
             );
         })}
         <NewsAndEventsMore {...argsInfo}/>
-        </div>
+        </Wrapper>
     )
 }
 
 export default News
+
+const Wrapper = styled.div`
+    box-sizing: border-box;
+`
 
 const ArticleWrapper = styled.div`
     border: solid 1px ${color.gray_gainsboro};

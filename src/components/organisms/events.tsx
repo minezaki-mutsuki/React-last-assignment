@@ -23,7 +23,7 @@ const Events = () => {
         { day: '2022.4.20', article: "Webビジネス初心者の方必見!Webサイト制作講座を3回にわたって開催します!", img : Book}
     ];
     return(
-        <div>
+        <Wrapper>
         <NewsAndEventsTitle {...argsTitle}/>
         {news.map((info :EventsProps) => {
             return(
@@ -39,11 +39,15 @@ const Events = () => {
             );
         })}
         <NewsAndEventsMore {...argsInfo}/>
-        </div>
+        </Wrapper>
     )
 }
 
 export default Events
+
+const Wrapper = styled.div`
+    box-sizing: border-box;
+`
 
 const ArticleWrapper = styled.div`
     border: solid 1px ${color.gray_gainsboro};
@@ -67,8 +71,8 @@ const ArticleWrapper = styled.div`
         overflow: hidden;
     }
     .DayWrapper{
-        margin-top: 40px;
-        margin-left: 24px;
+        
+        padding: 40px 24px;
     }
     }
 `
