@@ -25,10 +25,10 @@ const News = () => {
         <NewsAndEventsTitle {...argsTitle}/>
         {news.map((info :NewsProps) => {
             return(
-                <ArticleWrapper>
+                <div className="articleWrapper">
                     <Day>{info.day}</Day>
                     <Article href="#">{info.article}</Article>
-                </ArticleWrapper>
+                </div>
             );
         })}
         <NewsAndEventsMore {...argsInfo}/>
@@ -40,20 +40,22 @@ export default News
 
 const Wrapper = styled.div`
     box-sizing: border-box;
-`
-
-const ArticleWrapper = styled.div`
-    border: solid 1px ${color.gray_gainsboro};
-    border-bottom: none;
-    padding: 16px 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    &:last-child{
-        border-bottom: solid 1px ${color.gray_gainsboro};
-        margin-bottom: 30px;
+    .articleWrapper{
+        border-top: solid 1px ${color.gray_gainsboro};
+        border-right: solid 1px ${color.gray_gainsboro};
+        border-left: solid 1px ${color.gray_gainsboro};
+        padding: 16px 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &:nth-child(6){
+            border-bottom: solid 1px ${color.gray_gainsboro};
+            margin-bottom: 30px;
+        }
     }
 `
+
+
 const Day = styled.p`
     font-size:${size.xs} ;
     color: ${color.gray_nobel};

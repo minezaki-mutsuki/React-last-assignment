@@ -50,17 +50,19 @@ const Wrapper = styled.div`
 `
 
 const ArticleWrapper = styled.div`
-    border: solid 1px ${color.gray_gainsboro};
-    border-bottom: none;
+    border-top: solid 1px ${color.gray_gainsboro};
+    border-right: solid 1px ${color.gray_gainsboro};
+    border-left: solid 1px ${color.gray_gainsboro};
     padding: 10px 20px 16px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-decoration: none;
-    @media (min-width: ${breakpoint.lg}){
-    &:last-child{
+    &:nth-child(4){
         border-bottom: 1px solid ${color.gray_gainsboro};
+        margin-bottom: 30px;
     }
+    @media (min-width: ${breakpoint.lg}){
     padding: 0;
     display: flex;
     &:hover .img{

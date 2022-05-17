@@ -4,7 +4,7 @@ import { size , family } from '../../config/font';
 import { breakpoint } from "../../config/breakpoint";
 import Img from '../image/logo-black.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 type FooterProps = {
     nav: string
