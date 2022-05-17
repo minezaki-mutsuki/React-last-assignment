@@ -10,12 +10,13 @@ import plusIcon from '../image/plus-icon.svg'
 type HeaderProps = {
     nav: string
 }
+type MenuProps = {
+    menu: string
+}
 
 const Header = (props: HeaderProps) => {
 
     const nav : HeaderProps[] = [
-        {nav: 'HOME'},
-        { nav: 'CONCEPT'},
         { nav: 'SERVICE'},
         { nav: 'FLLOR'},
         { nav: 'INTERVIEW'},
@@ -23,27 +24,76 @@ const Header = (props: HeaderProps) => {
         { nav: 'ACCESS'},
         { nav: 'DOWNLOAD'}
     ]
+    const menu : MenuProps[] = [
+        { menu: 'ブログアーカイブ'},
+        { menu: 'お知らせアーカイブ'},
+        { menu: 'イベントアーカイブ'},
+        { menu: 'インタビューアーカイブ'},
+        { menu: 'FAQページ'},
+        { menu: '固定ページ(デフォルト)'},
+        { menu: 'CONCEPT'},
+        { menu: 'SERVICE'},
+        { menu: 'FLOOR'},
+        { menu: 'ACCESS'}
+    ]
 
     const [navs , setNavs] = useState(null);
     const [navClickNumber , setNavClickNumber] = useState<number>(0);
+    const [menus , setMenus] = useState(null);
+    const [menuClickNumber , setMenuClickNumber] = useState<number>(0);
 
-    const navList = (
-    nav.map((info:HeaderProps) => (
-        <Nav>
-        <a href="#" className="navList">{info.nav}</a>
-        <img src={plusIcon} alt="プラスアイコン" className="plusIcon" />
-        </Nav>
-    ))
-    )
+    
+
+    
+
+    
+
+    const menuClick =()=>{
+        if (menuClickNumber % 2 == 0){
+            setMenus(menuList)
+        } else {
+            setMenus(null)
+        }
+        setMenuClickNumber(menuClickNumber + 1);
+    };
 
     const handleClick =()=> {
         if (navClickNumber % 2 == 0){
             setNavs(navList)
+
         } else {
             setNavs(null)
         }
         setNavClickNumber(navClickNumber + 1);
     };
+
+    const menuList = (
+        <div className='menuWrapper'>
+            {menu.map((info:MenuProps) => {
+                return(
+                    <a href="#" className="menuList">{info.menu}</a>
+                )
+            })} 
+        </div>
+    );
+
+    const navList = (
+        <>
+        <a href="#" className="navList">HOME</a>
+        <Nav>
+        <a href="#" className="concept">CONCEPT</a>
+        <button onClick={menuClick}>
+        <img src={plusIcon} alt="プラスアイコン" className="plusIcon" />
+        </button>
+        </Nav>
+        {menus}
+        {nav.map((info:HeaderProps) => {
+            return(
+                <a href="#" className="navList">{info.nav}</a>
+            )
+        })} 
+        </>
+    )
 
     return(
         <HeaderWrapper>
@@ -52,7 +102,7 @@ const Header = (props: HeaderProps) => {
                 <img src={Logo} alt="ロゴ" className="logoImg" />
                 </a>
                 <button onClick={handleClick}>
-                <img src={humbergerIcon} alt="ハンバーガーメニュー" className="Menu" />
+                <img src={humbergerIcon} alt="ハンバーガーメニュー" className="MenuButton" />
                 </button>
             </div>
             {navs}
@@ -82,12 +132,33 @@ const HeaderWrapper = styled.div`
             padding: 0;
             appearance: none;
 
-            .Menu{
+            .MenuButton{
                 width: 15px;
-            
             }
         }
-    }   
+    }
+    
+        .navList{
+            color: ${color.white};
+            font-family: ${family.gothic};
+            font-size: ${size.s};
+            background-color: ${color.black};
+            text-decoration: none;
+            display: block;
+            padding: 15px 16px;
+        }
+
+        .menuWrapper{
+            .menuList{
+            color: ${color.white};
+            font-family: ${family.gothic};
+            font-size: ${size.s};
+            background-color: ${color.black};
+            text-decoration: none;
+            display: block;
+            padding: 15px 32px;
+            }
+        }
 `
 const Nav = styled.div`
     display: flex;
@@ -95,7 +166,7 @@ const Nav = styled.div`
     padding: 12px 16px;
     justify-content: space-between;
 
-    .navList{
+    .concept{
         color: ${color.white};
         font-family: ${family.gothic};
         font-size: ${size.s};
@@ -103,10 +174,12 @@ const Nav = styled.div`
         margin-top: 4px;
     }
 
-    .plusIcon{
-        display: none;
-        &:nth-child(2){
-            display: block;
-        }
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
     }
 `
