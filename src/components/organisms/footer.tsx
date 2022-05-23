@@ -5,6 +5,8 @@ import { breakpoint } from "../../config/breakpoint";
 import Img from '../image/logo-black.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 type FooterProps = {
     nav: string
@@ -28,10 +30,15 @@ const Footer = () => {
                 <p className="info">〒532-0011 大阪市淀川区西中島6丁目8-23テスト</p>
                 <p className="info">TEL.06-1234-5678 営業時間/9:00～22:00 定休日/不定休</p>
                 <div className="icons">
-                    <FontAwesomeIcon className="newsInfoIcon" icon={faFacebookF} />
-                    <FontAwesomeIcon className="newsInfoIcon" icon={faFacebookF} />
-                    <FontAwesomeIcon className="newsInfoIcon" icon={faFacebookF} />
-                    <FontAwesomeIcon className="newsInfoIcon" icon={faFacebookF} />
+                    <a href="#" className="snsLink">
+                    <FontAwesomeIcon className="snsIcon" icon={faFacebookF} />
+                    </a>
+                    <a href="#" className="snsLink">
+                    <FontAwesomeIcon className="snsIcon" icon={faTwitter} />
+                    </a>
+                    <a href="#" className="snsLink">
+                    <FontAwesomeIcon className="snsIcon" icon={faInstagram} />
+                    </a>
                 </div>
             </div>
             <div className="navWrapper">
@@ -60,6 +67,18 @@ const Wrapper = styled.div`
             font-size: ${size.s};
             font-family: ${family.gothic};
             margin-bottom: 20px;
+        }
+        .icons{
+            .snsLink{
+                color: ${color.black};
+                transition: ease 0.2s;
+                &:hover{
+                    color: ${color.gray_nobel};
+                }
+                .snsIcon{
+                    margin: 0 7px;
+                }
+            }
         }
     }
     .navWrapper{

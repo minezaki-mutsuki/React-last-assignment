@@ -37,34 +37,15 @@ const Header = (props: HeaderProps) => {
         { menu: 'ACCESS'}
     ]
 
-    const [navs , setNavs] = useState(null);
-    const [navClickNumber , setNavClickNumber] = useState<number>(0);
-    const [menus , setMenus] = useState(null);
-    const [menuClickNumber , setMenuClickNumber] = useState<number>(0);
-
-    
-
-    
-
-    
+    const [navVisbility, setNavVisibility] = useState<boolean>(false);
+    const [menuVisbility, setMenuVisibility] = useState<boolean>(false);
 
     const menuClick =()=>{
-        if (menuClickNumber % 2 == 0){
-            setMenus(menuList)
-        } else {
-            setMenus(null)
-        }
-        setMenuClickNumber(menuClickNumber + 1);
+        setMenuVisibility(!menuVisbility);
     };
 
     const handleClick =()=> {
-        if (navClickNumber % 2 == 0){
-            setNavs(navList)
-
-        } else {
-            setNavs(null)
-        }
-        setNavClickNumber(navClickNumber + 1);
+        setNavVisibility(!navVisbility)
     };
 
     const menuList = (
@@ -79,14 +60,14 @@ const Header = (props: HeaderProps) => {
 
     const navList = (
         <>
-        <a href="#" className="navList">HOME</a>
+            <a href="#" className="navList">HOME</a>
         <Nav>
-        <a href="#" className="concept">CONCEPT</a>
-        <button onClick={menuClick}>
-        <img src={plusIcon} alt="プラスアイコン" className="plusIcon" />
-        </button>
+            <a href="#" className="concept">CONCEPT</a>
+            <button onClick={menuClick}>
+                <img src={plusIcon} alt="プラスアイコン" className="plusIcon" />
+            </button>
         </Nav>
-        {menus}
+        {menuVisbility ? menuList : <></>}
         {nav.map((info:HeaderProps) => {
             return(
                 <a href="#" className="navList">{info.nav}</a>
@@ -105,7 +86,7 @@ const Header = (props: HeaderProps) => {
                 <img src={humbergerIcon} alt="ハンバーガーメニュー" className="MenuButton" />
                 </button>
             </div>
-            {navs}
+            {navVisbility ? navList : <></>}
         </HeaderWrapper>
     )
 }
