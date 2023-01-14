@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/React-last-assignment/static/css/main.073c9b0a.css",
+    "main.js": "/React-last-assignment/static/js/main.f67db25a.js",
+    "static/js/787.312bfd87.chunk.js": "/React-last-assignment/static/js/787.312bfd87.chunk.js",
+    "static/media/top-image.png": "/React-last-assignment/static/media/top-image.51d19649be0ca4cf82d1.png",
+    "static/media/book-coffee.png": "/React-last-assignment/static/media/book-coffee.ffb982ca726ce6b32339.png",
+    "static/media/room1.png": "/React-last-assignment/static/media/room1.ef4f94a7adc5b54655f0.png",
+    "static/media/room2.png": "/React-last-assignment/static/media/room2.76ab55b384ee05c4cf10.png",
+    "static/media/reading-with-coffee.png": "/React-last-assignment/static/media/reading-with-coffee.940a8410979ed399b1ad.png",
+    "static/media/floor.png": "/React-last-assignment/static/media/floor.c12a92f83c6ffa7e0128.png",
+    "static/media/service.png": "/React-last-assignment/static/media/service.a5c8ff7d46be95f0a974.png",
+    "static/media/concept.png": "/React-last-assignment/static/media/concept.5df74fa5c0af77fa2323.png",
+    "static/media/article-work.png": "/React-last-assignment/static/media/article-work.aeb39f156939f09720eb.png",
+    "static/media/article-book.png": "/React-last-assignment/static/media/article-book.7b3e8aa221d28eb285f6.png",
+    "static/media/article-office.png": "/React-last-assignment/static/media/article-office.09f420150b46a90ec50d.png",
+    "index.html": "/React-last-assignment/index.html",
+    "static/media/humberger-icon.svg": "/React-last-assignment/static/media/humberger-icon.986284f7ec69976476fb2a63cb3e3ddb.svg",
+    "static/media/plus-icon.svg": "/React-last-assignment/static/media/plus-icon.58338bc5c3ddb81f7edded2b4158d0e7.svg",
+    "main.073c9b0a.css.map": "/React-last-assignment/static/css/main.073c9b0a.css.map",
+    "main.f67db25a.js.map": "/React-last-assignment/static/js/main.f67db25a.js.map",
+    "787.312bfd87.chunk.js.map": "/React-last-assignment/static/js/787.312bfd87.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.f67db25a.js"
+  ]
+}
